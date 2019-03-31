@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:400,700|Raleway:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <canvas></canvas>
+    <div class="burger"><span><i class="fas fa-bars"></i></span></div>
+    <nav>
+        <div class="close">
+            <span class="close"><i class="fas fa-times"></i></span>
+        </div>
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Products</li>
+            <li>Contact</li>
+        </ul>
+        <div class="socialMedia">
+            <span class="media fb"><i class="fab fa-facebook-square"></i></span>
+            <span class="media twitter"><i class="fab fa-twitter-square"></i></span>
+            <span class="media google"><i class="fab fa-google-plus-square"></i></span>
+            <span class="media instagram"><i class="fab fa-instagram"></i></span>
+        </div>
+    </nav>
+    <header>
+        <img src="img/headerLG.png" alt="">
+        <h1>Lorem ipsum</h1>
+        <h1>we're coming soon</h1>
+        <p>Lorem ipsum dolor sit amet cons adipisicing elit. Dolorum temporibus enim accusamus cupiditate
+            sapiente quis rerum.</p>
+        <div class="clock">
+            <div class="days">
+                <span class="days date"></span>
+                <span>days</span>
+            </div>
+            <div class="hours">
+                <span class="hours date"></span>
+                <span>hours</span>
+            </div>
+            <div class="minutes">
+                <span class="minutes date"></span>
+                <span>minutes</span>
+            </div>
+            <div class="seconds">
+                <span class="seconds date"></span>
+                <span>seconds</span>
+            </div>
+        </div>
+        <button class="learnMore">Learn more</button>
+    </header>
+    <section class="about">
+        <img src="img/arrow.png" alt="" class="arrow">
+        <div class="about">
+            <h2 class="about">About Us</h2>
+            <p class="aboutDesc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur commodi fuga
+                excepturi incidunt sint optio praesentium alias odit quos perferendis autem a vero, ab esse eveniet
+                facilis
+                libero provident sequi, possimus labore doloremque accusamus officia neque. Laudantium, architecto! Id
+                nobis ipsam similique, nam harum praesentium ducimus facilis error deleniti dolores repellendus
+                doloribus.</p>
+            <p class="secondPart">
+                Assumenda tempora veniam dignissimos. Eos velit eius distinctio labore, debitis, dicta sint,
+                voluptatibus maxime modi rerum quaerat? Tenetur molestias quos labore tempore sint nobis obcaecati
+                quisquam, hic voluptatum alias, excepturi quaerat pariatur ad quo nihil repellendus numquam suscipit
+                iusto saepe voluptate!
+            </p>
+        </div>
+    </section>
+    <section class="products">
+        <h2 class="products">Products</h2>
+        <div class="allProducts">
+            <div class="product computer">
+                <img src="img/computer.png" alt="" class="computer">
+                <h3>Computer lorem series</h3>
+                <p class="productDesc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique neque
+                    possimus
+                    minus facere consequatur hic voluptates quod laboriosam alias sint.</p>
+            </div>
+            <div class="product headphones">
+                <img src="img/headphones.png" alt="" class="headphones">
+                <h3>Headphones lorem series</h3>
+                <p class="productDesc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
+                    neque possimus
+                    minus facere consequatur hic voluptates quod laboriosam alias sint.</p>
+            </div>
+            <div class="product phone">
+                <img src="img/phone.png" alt="" class="phone">
+                <h3>Smartphone lorem series</h3>
+                <p class="productDesc">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Similique
+                    neque possimus
+                    minus facere consequatur hic voluptates quod laboriosam alias sint.</p>
+            </div>
+            <div class="product more">
+                <h3>More soon...</h3>
+            </div>
+        </div>
+    </section>
+    <section class="contact">
+        <h2 class="contact">Contact</h2>
+        <form action="">
+            <input type="text" placeholder="Name">
+            <input type="text" placeholder="Email address">
+            <textarea placeholder="Your message..."></textarea>
+            <button class="send">Send the message</button>
+        </form>
+        <div class="subscribe">
+            <input type="text" placeholder="Email address">
+            <button class="subscribe">Get newsletter</button>
+        </div>
+
+        <div class="socialMedia">
+            <ul>
+                <li><a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="https://twitter.com/"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="https://plus.google.com/discover"><i class="fab fa-google-plus-g"></i></a></li>
+                <li><a href="https://pl.linkedin.com/"><i class="fab fa-linkedin-in"></i></a></li>
+                <li><a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a></li>
+            </ul>
+        </div>
+    </section>
+    <footer>
+        <p class="footerP">&copy - Lorem ipsum</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+
+    <script src="js/countdownClock.js"></script>
+    <script src="js/canvas.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

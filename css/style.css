@@ -1,0 +1,1861 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Oswald', sans-serif;
+}
+
+:root {
+    --header-margin-top: 18px;
+    --sections-padding: 0 7.5% 0 7.5%;
+    --p-font: 'Raleway', sans-serif;
+    --p-size: 15px;
+    --p-line-height: 1.8;
+    --h2-line-height: 2;
+    --h2-margin: 30px 0 20px;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow-x: hidden;
+    background-color: #111;
+    color: rgb(240, 240, 240);
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+
+/* NAV STYLES */
+div.burger {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+div.burger span {
+    font-size: 34px;
+    cursor: pointer;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(20, 20, 20, 0.95);
+    opacity: 0;
+    transition: .2s linear;
+}
+
+nav.active {
+    z-index: 2;
+    opacity: 1;
+}
+
+nav div.close {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 50px;
+
+}
+
+div.close span.close {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    color: rgba(240, 240, 240, 0.9);
+    border-radius: 50%;
+    border: 3px solid rgba(232, 12, 227, 0.7);
+    cursor: pointer;
+}
+
+nav ul {
+    margin-top: 50px;
+    list-style: none;
+}
+
+nav ul li {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 30px;
+    font-family: var(--p-font);
+    transition: .3s;
+    cursor: pointer;
+}
+
+nav div.socialMedia {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    margin-top: 30px;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+
+/* HEADER STYLES */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    padding: var(--sections-padding);
+}
+
+header img {
+    display: none;
+}
+
+header h1 {
+    line-height: 1.2;
+    color: rgba(240, 240, 240, 0.9);
+    font-size: 36px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+header h1:nth-of-type(1) {
+    margin-top: 95px;
+}
+
+header p {
+    line-height: var(--p-line-height);
+    margin-top: var(--header-margin-top);
+    font-family: var(--p-font);
+    font-size: var(--p-size);
+    font-weight: 300;
+    text-align: center;
+    color: rgba(240, 240, 240, 0.8);
+}
+
+div.clock {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: var(--header-margin-top);
+}
+
+div.clock div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+div.clock div span.date {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+    line-height: 1;
+    border-radius: 50%;
+    border: 2px solid rgb(240, 240, 240);
+}
+
+button {
+    width: 100%;
+    font-family: 'Raleway', sans-serif;
+    color: rgb(240, 240, 240);
+    text-transform: uppercase;
+    border: 1px solid rgb(240, 240, 240);
+    border-radius: 4px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+header button.learnMore {
+    height: 50px;
+    margin-top: var(--header-margin-top);
+    font-size: 18px;
+    background-image: linear-gradient(45deg, #5E11B2 42%, #E80CE3);
+}
+
+header button.activePurple {
+    background-image: linear-gradient(45deg, #E80CE3 42%, #5E11B2);
+}
+
+
+/* SECTION STYLES */
+section {
+    width: 100%;
+    padding: var(--sections-padding);
+}
+
+section h2 {
+    margin: var(--h2-margin);
+    line-height: var(--h2-line-height);
+    color: rgba(240, 240, 240, 0.9);
+    text-transform: uppercase;
+}
+
+
+/* SECTION ABOUT */
+section.about {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    height: 100vh;
+    margin-top: 25px;
+    /* background-color: rgba(94, 17, 178, 0.9); */
+    background-color: rgba(232, 12, 227, 0.7);
+}
+
+section.about img.arrow {
+    display: none;
+}
+
+section.about h2.about {
+    border-bottom: 2px solid #111;
+}
+
+section.about p.aboutDesc {
+    margin-bottom: 30px;
+    padding: 0 20px 0 0;
+    line-height: var(--p-line-height);
+    font-family: var(--p-font);
+    font-size: var(--p-size);
+    color: rgba(240, 240, 240, 0.8);
+}
+
+section.about p.secondPart {
+    display: none;
+}
+
+/* SECTION PRODUCTS */
+
+section.products h2.products {
+    border-bottom: 2px solid rgba(232, 12, 227, 0.7);
+
+}
+
+section.products div.product {
+    margin-bottom: 50px;
+}
+
+section.products div.product h3 {
+    margin: 10px 0;
+    font-size: 23px;
+}
+
+section.products div.product img.computer {
+    width: 200px;
+}
+
+section.products p.productDesc {
+    line-height: 1.6;
+    font-family: var(--p-font);
+    color: rgba(240, 240, 240, 0.8);
+}
+
+section.products div.product.computer {
+    margin-bottom: 25px;
+}
+
+section.products div.headphones {
+    padding: 20px 0;
+    border-top: 2px solid rgba(232, 12, 227, 0.7);
+    border-bottom: 2px solid rgba(232, 12, 227, 0.7);
+    text-align: right;
+}
+
+section.products div.headphones img.headphones {
+    width: 180px;
+}
+
+section.products div.phone img.phone {
+    width: 100px;
+}
+
+section.products div.product.more {
+    display: none;
+}
+
+/* SECTION CONTACT */
+section.contact {
+    min-height: 100vh;
+    background-color: #282828;
+}
+
+section.contact h2 {
+    margin-bottom: 40px;
+    border-bottom: 2px solid #111;
+}
+
+section.contact form input,
+section.contact form textarea {
+    width: 100%;
+    padding-left: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 2px;
+    font-family: var(--p-font);
+    font-size: 14px;
+    font-weight: 700;
+    color: #444;
+    background-color: rgb(245, 245, 245);
+}
+
+section.contact input {
+    height: 50px;
+}
+
+section.contact textarea {
+    height: 120px;
+    padding-top: 15px;
+}
+
+section.contact form button.send {
+    height: 60px;
+    font-size: 20px;
+    /* background-image: linear-gradient(45deg, #111 10%, #E80CE3); */
+    background-color: rgba(94, 17, 178, 0.7);
+}
+
+section.contact div.subscribe {
+    display: flex;
+    margin-top: 40px;
+}
+
+section.contact div.subscribe input {
+    width: 60%;
+    height: 40px;
+    padding-left: 10px;
+    font-weight: 700;
+    color: #444;
+    border-radius: 4px 0 0 4px;
+    border: none;
+    font-family: var(--p-font);
+    background-color: rgb(245, 245, 245);
+}
+
+section.contact div.subscribe button.subscribe {
+    width: 40%;
+    height: 40px;
+    border-radius: 0 4px 4px 0;
+    font-size: 10px;
+    background-color: rgba(94, 17, 178, 0.7);
+}
+
+section.contact div.socialMedia {
+    display: none;
+}
+
+
+/* FOOTER */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    font-size: 18px;
+}
+
+@media (min-width: 360px) and (orientation: portrait) {
+    :root {
+        --header-margin-top: 25px;
+        --p-size: 16px;
+        --sections-padding: 0 9% 0 9%;
+    }
+
+    div.close span.close {
+        width: 55px;
+        height: 55px;
+        font-size: 32px;
+    }
+
+    nav ul li {
+        font-size: 32px;
+    }
+
+    nav div.socialMedia {
+        font-size: 50px;
+    }
+
+    div.burger span {
+        font-size: 40px;
+    }
+
+    header h1 {
+        font-size: 38px;
+    }
+
+    header h1:nth-of-type(1) {
+        margin-top: 72px;
+    }
+
+    div.clock {
+        font-size: 18px;
+    }
+
+    div.clock div span.date {
+        width: 55px;
+        height: 55px;
+    }
+
+    header button.learnMore {
+        height: 56px;
+        font-size: 20px;
+    }
+
+    section h2 {
+        font-size: 28px;
+    }
+
+    section.about {
+        height: 95vh;
+    }
+
+    section.products div.product h3 {
+        font-size: 25px;
+    }
+
+    section.contact input {
+        height: 60px;
+    }
+
+    section.contact form input,
+    section.contact form textarea {
+        font-size: 15px;
+    }
+
+    section.contact textarea {
+        height: 128px;
+    }
+
+    section.contact div.subscribe input {
+        height: 46px;
+    }
+
+    section.contact div.subscribe button.subscribe {
+        height: 46px;
+        font-size: 11px;
+    }
+}
+
+@media (min-width: 375px) and (orientation: portrait) {
+
+    :root {
+        --p-size: 17px;
+    }
+
+    div.burger span {
+        font-size: 41px;
+    }
+
+    header h1 {
+        font-size: 40px;
+    }
+
+    header h1:nth-of-type(1) {
+        margin-top: 105px;
+    }
+
+    div.clock {
+        font-size: 19px;
+    }
+
+    div.clock div span.date {
+        width: 58px;
+        height: 58px;
+    }
+
+    header button.learnMore {
+        height: 58px;
+        font-size: 22px;
+    }
+
+    section h2 {
+        font-size: 29px;
+    }
+
+    section.products div.product h3 {
+        font-size: 26px;
+    }
+
+    section.products p.productDesc {
+        font-size: var(--p-size);
+    }
+
+    img.computer {
+        width: 210px;
+    }
+
+    section.products div.headphones img.headphones {
+        width: 185px;
+    }
+
+    img.phone {
+        width: 105px;
+    }
+
+    section.contact form input,
+    section.contact form textarea {
+        margin-bottom: 25px;
+        font-size: 16px;
+    }
+
+    section.contact input {
+        height: 65px;
+    }
+
+    section.contact textarea {
+        height: 140px;
+    }
+
+    section.contact form button.send {
+        height: 65px;
+        font-size: 21px;
+    }
+}
+
+@media (min-width: 375px) and (min-height: 810px) {
+
+    nav ul {
+        margin-top: 64px;
+    }
+
+    div.close span.close {
+        width: 60px;
+        height: 60px;
+        font-size: 35px;
+        border: 4px solid rgba(232, 12, 227, 0.7)
+    }
+
+    nav ul li {
+        font-size: 38px;
+    }
+
+    nav div.socialMedia {
+        font-size: 55px;
+    }
+
+    section.about {
+        height: 86vh;
+    }
+
+    section.contact {
+        height: 86vh;
+    }
+}
+
+@media (min-width: 410px)and (orientation: portrait) {
+
+    :root {
+        --p-size: 19px;
+    }
+
+    div.close span.close {
+        width: 64px;
+        height: 64px;
+        font-size: 35px;
+    }
+
+    nav ul {
+        margin-top: 60px;
+    }
+
+    nav ul li {
+        font-size: 37px;
+    }
+
+    nav div.socialMedia {
+        font-size: 56px;
+    }
+
+    div.burger span {
+        font-size: 43px;
+    }
+
+    header h1 {
+        font-size: 45px;
+    }
+
+    header h1:nth-of-type(1) {
+        margin-top: 110px;
+    }
+
+
+
+    div.clock {
+        font-size: 22px;
+    }
+
+    div.clock div span.date {
+        width: 65px;
+        height: 65px;
+        border: 3px solid rgb(240, 240, 240);
+    }
+
+    header button.learnMore {
+        height: 64px;
+        font-size: 25px;
+    }
+
+    section h2 {
+        font-size: 32px;
+    }
+
+    section.products div.product h3 {
+        font-size: 28px;
+    }
+
+    section.contact form input,
+    section.contact form textarea {
+        margin-bottom: 30px;
+        font-size: 17px;
+    }
+
+    section.contact textarea {
+        height: 150px;
+    }
+
+    section.contact form button.send {
+        height: 70px;
+        font-size: 22px;
+    }
+
+    section.contact div.subscribe input {
+        height: 50px;
+    }
+
+    section.contact div.subscribe button.subscribe {
+        height: 50px;
+        font-size: 12px;
+    }
+
+    footer {
+        height: 64px;
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 530px) and (orientation: landscape) {
+    :root {
+        --sections-padding: 0 10% 0 10%;
+        --header-margin-top: 12px;
+    }
+
+    nav div.close {
+        margin-top: 26px;
+    }
+
+    nav ul {
+        margin-top: 20px;
+    }
+
+    nav ul li {
+        margin-bottom: 10px;
+        font-size: 26px;
+    }
+
+    nav div.socialMedia {
+        width: 61%;
+        margin-top: 0px;
+    }
+
+    header h1 {
+        width: 80%;
+    }
+
+    header h1:nth-of-type(1) {
+        margin-top: 20px;
+    }
+
+    header p {
+        width: 80%;
+    }
+
+    div.clock {
+        display: none;
+    }
+
+    header button.learnMore {
+        width: 56%;
+    }
+
+    div.subscribe {
+        margin-bottom: 20px;
+    }
+}
+
+@media (min-width: 640px) and (orientation: landscape) {
+
+    :root {
+        --p-size: 17px;
+        --header-margin-top: 18px;
+    }
+
+    nav ul {
+        margin-top: 24px;
+    }
+
+    nav ul li {
+        margin-bottom: 12px;
+        font-size: 30px;
+    }
+
+    nav div.socialMedia {
+        font-size: 45px;
+    }
+
+    div.burger span {
+        font-size: 40px;
+    }
+
+    header h1 {
+        font-size: 42px;
+    }
+
+    header button.learnMore {
+        height: 55px;
+        font-size: 20px;
+    }
+
+    section h2 {
+        font-size: 27px;
+    }
+
+    section.products div.product h3 {
+        font-size: 24px;
+    }
+
+    section.products div.product:nth-of-type(odd) p.productDesc {
+        padding-right: 10%;
+    }
+
+    section.products div.product:nth-of-type(even) p.productDesc {
+        padding-left: 10%;
+    }
+
+    section.contact form input,
+    section.contact form textarea {
+        margin-bottom: 25px;
+    }
+
+    section.contact div.subscribe input {
+        height: 45px;
+    }
+
+    section.contact div.subscribe button.subscribe {
+        height: 45px;
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 730px) and (orientation: landscape) {
+    :root {
+        --p-size: 18px;
+        --header-margin-top: 20px;
+    }
+
+    div.burger {
+        right: 25px;
+    }
+
+    div.burger span {
+        font-size: 45px;
+    }
+
+    header h1 {
+        font-size: 44px;
+    }
+
+    header h1:nth-of-type(1) {
+        margin-top: 35px;
+    }
+
+    header button.learnMore {
+        height: 60px;
+        font-size: 23px;
+    }
+
+    section h2 {
+        font-size: 30px;
+    }
+
+    section.about p.aboutDesc {
+        padding: 0 60px 0 0;
+    }
+
+    section.products div.product h3 {
+        font-size: 27px;
+    }
+
+    section.products p.productDesc {
+        font-size: var(--p-size);
+    }
+
+    section.contact form input,
+    section.contact form textarea {
+        padding-left: 15px;
+        font-size: 17px;
+    }
+
+    section.contact input {
+        height: 65px;
+    }
+
+    section.contact textarea {
+        height: 160px;
+    }
+
+    section.contact form button.send {
+        height: 65px;
+        font-size: 22px;
+    }
+
+    section.contact div.subscribe input {
+        height: 50px;
+        font-size: 16px;
+    }
+
+    section.contact div.subscribe button.subscribe {
+        height: 50px;
+        font-size: 16px;
+    }
+
+    footer {
+        font-size: 24px;
+    }
+}
+
+@media (min-width: 768px) and (orientation: portrait) {
+
+    :root {
+        --p-size: 24px;
+        --header-margin-top: 40px;
+    }
+
+    nav div.close {
+        margin-top: 70px;
+    }
+
+    div.close span.close {
+        width: 90px;
+        height: 90px;
+        border: 5px solid rgba(232, 12, 227, 0.7);
+        font-size: 46px;
+    }
+
+    nav ul li {
+        margin-bottom: 35px;
+        font-size: 68px;
+    }
+
+    nav div.socialMedia {
+        font-size: 82px;
+    }
+
+    div.burger {
+        top: 32px;
+        right: 25px;
+    }
+
+    div.burger span {
+        font-size: 56px;
+    }
+
+    header h1 {
+        width: 80%;
+        font-size: 70px;
+    }
+
+    header h1:nth-of-type(1) {
+        margin-top: 75px;
+    }
+
+    div.clock {
+        font-size: 26px;
+    }
+
+    div.clock div span.date {
+        width: 90px;
+        height: 90px;
+        border: 4px solid rgb(240, 240, 240);
+    }
+
+    header button.learnMore {
+        height: 87px;
+        font-size: 34px;
+    }
+
+    section h2 {
+        font-size: 43px;
+    }
+
+    section.about h2.about {
+        border-bottom: 3px solid #111;
+    }
+
+    section.about p.aboutDesc {
+        padding: 0 88px 0 0;
+        font-size: 29px;
+    }
+
+    section.products div.product:nth-of-type(odd) p.productDesc {
+        padding-right: 5%;
+    }
+
+    section.products div.product:nth-of-type(even) p.productDesc {
+        padding-left: 5%;
+    }
+
+    section.products h2.products {
+        border-bottom: 3px solid rgba(232, 12, 227, 0.7);
+    }
+
+    section.products div.product.computer {
+        margin-bottom: 30px;
+    }
+
+    section.products div.headphones {
+        padding: 30px 0;
+        border-top: 3px solid rgba(232, 12, 227, 0.7);
+        border-bottom: 3px solid rgba(232, 12, 227, 0.7);
+    }
+
+    section.products div.product img.computer {
+        width: 270px;
+    }
+
+    section.products div.headphones img.headphones {
+        width: 215px;
+    }
+
+    section.products div.phone img.phone {
+        width: 132px;
+    }
+
+    section.products div.product h3 {
+        font-size: 34px;
+    }
+
+    section.contact h2 {
+        border-bottom: 3px solid #111;
+    }
+
+    section.contact form input,
+    section.contact form textarea {
+        margin-bottom: 35px;
+        padding-left: 18px;
+        font-size: 21px;
+        border-radius: 4px;
+    }
+
+    section.contact input {
+        height: 90px;
+    }
+
+    section.contact textarea {
+        height: 190px;
+        padding-top: 20px;
+    }
+
+    section.contact form button.send {
+        height: 80px;
+        font-size: 25px;
+    }
+
+    section.contact div.subscribe input {
+        height: 62px;
+        font-size: 17px;
+    }
+
+    section.contact div.subscribe {
+        margin-top: 50px;
+    }
+
+    section.contact div.subscribe button.subscribe {
+        height: 62px;
+        font-size: 17px;
+    }
+
+    footer {
+        font-size: 24px;
+    }
+}
+
+@media (min-width: 820px) and (orientation: landscape) {
+
+    :root {
+        --p-size: 20px;
+    }
+
+    div.close span.close {
+        width: 55px;
+        height: 55px;
+        font-size: 32px;
+    }
+
+    nav ul li {
+        font-size: 34px;
+    }
+
+    nav div.socialMedia {
+        width: 53%;
+        font-size: 53px;
+    }
+
+    header h1 {
+        font-size: 50px;
+    }
+
+    section h2 {
+        font-size: 32px;
+    }
+
+    section.products div.product h3 {
+        font-size: 29px;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    :root {
+        --header-margin-top: 25px;
+        --p-size: 23px;
+    }
+
+    nav {
+        justify-content: center;
+        flex-direction: row;
+        z-index: 1;
+        opacity: 1;
+        width: 100%;
+        height: 60px;
+        border-bottom: 1px solid rgba(240, 240, 240, 0.8);
+        background-color: #111;
+    }
+
+    nav.activeScroll {
+        color: #111;
+        border-color: #111;
+        background-color: rgba(240, 240, 240, 0.8);
+    }
+
+    nav div.close {
+        display: none;
+    }
+
+    nav ul {
+        display: flex;
+        margin-top: 0;
+        margin-left: 190px;
+    }
+
+    nav ul li {
+        margin-right: 102px;
+        margin-bottom: 0;
+        font-size: 22px;
+    }
+
+    nav ul li:hover {
+        color: rgba(232, 12, 227, 0.7);
+    }
+
+    nav div.socialMedia {
+        display: none;
+    }
+
+    div.burger {
+        display: none;
+    }
+
+    header img {
+        display: block;
+        position: absolute;
+        bottom: -98px;
+        left: -16px;
+        width: 415px;
+    }
+
+    header {
+        position: relative;
+        overflow: hidden;
+    }
+
+    header h1 {
+        width: 100%;
+        font-size: 85px;
+    }
+
+    header h1:nth-of-type(1) {
+        margin-top: 50px;
+    }
+
+    div.clock {
+        display: flex;
+        width: 82%;
+        font-size: 26px;
+    }
+
+    div.clock div span.date {
+        height: 85px;
+        width: 85px;
+        border: 4px solid rgb(240, 240, 240);
+    }
+
+    header button.learnMore {
+        margin-top: 35px;
+    }
+
+    section h2 {
+        font-size: 80px;
+    }
+
+    section.about {
+        justify-content: flex-end;
+        align-items: flex-start;
+        position: relative;
+        height: 100vh;
+        margin-top: 0;
+        overflow: hidden;
+    }
+
+
+    section.about img.arrow {
+        display: block;
+        position: absolute;
+        bottom: 170px;
+        right: 34%;
+        width: 200px;
+        opacity: 0;
+        transition: .3s linear 1s;
+    }
+
+    section.about img.arrow.active {
+        right: 25%;
+        opacity: 1;
+    }
+
+    div.about {
+        width: 50%;
+        text-align: left;
+    }
+
+    section.about h2.about {
+        position: relative;
+        top: 100px;
+        line-height: 1.2;
+        border: none;
+        opacity: 0;
+        transition: .3s linear;
+    }
+
+    section.about p.aboutDesc {
+        position: relative;
+        top: 100px;
+        margin-bottom: 50px;
+        padding: 0;
+        font-size: 18px;
+        opacity: 0;
+        transition: .3s linear .2s;
+    }
+
+    section.about h2.about.active,
+    section.about p.aboutDesc.active {
+        top: 0;
+        opacity: 1;
+    }
+
+    section.about p.secondPart {
+        display: block;
+        position: absolute;
+        top: -50px;
+        right: 10%;
+        width: 40%;
+        line-height: var(--p-line-height);
+        font-size: 18px;
+        font-family: var(--p-font);
+        text-align: right;
+        color: rgba(240, 240, 240, 0.8);
+        opacity: 0;
+        transition: .3s linear 1.5s;
+    }
+
+    section.about p.secondPart.active {
+        top: 50px;
+        opacity: 1;
+    }
+
+    section.products {
+        padding: 0;
+    }
+
+    section.products div.allProducts {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin: 1.5vw 1vw;
+    }
+
+    section.products div.product {
+        position: relative;
+        width: 47.5vw;
+        height: 46vw;
+        max-height: 580px;
+        margin: 0;
+        background-color: #222;
+        cursor: pointer;
+    }
+
+    section.products div.product:nth-of-type(1),
+    section.products div.product:nth-of-type(2) {
+        margin-bottom: 1vw;
+    }
+
+    section.products div.product.computer {
+        margin-bottom: 0;
+    }
+
+    section.products div.product>* {
+        position: absolute;
+    }
+
+    section.products div.product img {
+        bottom: 5%;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: .3s linear;
+    }
+
+    section.products div.product:hover img {
+        transform: translateX(-50%) scale(1.1);
+    }
+
+    section.products h2.products {
+        display: none;
+    }
+
+    section.products div.product.computer img {
+        width: 330px;
+    }
+
+    section.products div.headphones {
+        padding: 0;
+        border: none;
+        text-align: right;
+    }
+
+    section.products div.headphones img.headphones {
+        width: 260px;
+    }
+
+    section.products div.phone img.phone {
+        width: 153px;
+    }
+
+    section.products div.product.more {
+        display: block;
+    }
+
+    section.products div.product.more h3 {
+        font-size: 40px;
+    }
+
+    section.products div.product h3 {
+        top: 7%;
+        width: 100%;
+        margin: 0;
+        text-align: center;
+    }
+
+    section.products div.product p.productDesc {
+        top: 20%;
+        left: 50%;
+        width: 80%;
+        transform: translateX(-50%);
+        text-align: center;
+        font-size: 16px;
+    }
+
+    section.products div.product:nth-of-type(even) p.productDesc {
+        padding: 0;
+    }
+
+    section.products div.product:nth-of-type(odd) p.productDesc {
+        padding: 0;
+    }
+
+    section.contact {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        min-height: 120vh;
+    }
+
+    section.contact h2 {
+        line-height: 1.4;
+        text-align: center;
+        border: none;
+    }
+
+    section.contact form {
+        width: 500px;
+        text-align: center;
+    }
+
+    section.contact form input,
+    section.contact form textarea {
+        width: 100%;
+        margin-bottom: 25px;
+        background-color: rgba(240, 240, 240, 0.8);
+    }
+
+    section.contact input {
+        height: 54px;
+    }
+
+    section.contact textarea {
+        height: 180px;
+    }
+
+    section.contact form button.send {
+        width: 100%;
+        height: 55px;
+        margin-top: 12px;
+        font-size: 19px;
+        color: rgba(240, 240, 240, 0.9);
+        border-color: rgba(240, 240, 240, 0.8);
+    }
+
+    section.contact div.subscribe {
+        width: 500px;
+        margin-bottom: 24px;
+    }
+
+    section.contact div.subscribe input {
+        height: 40px;
+        font-size: 14px;
+        background-color: rgba(240, 240, 240, 0.8);
+    }
+
+    section.contact div.subscribe button.subscribe {
+        height: 40px;
+        font-size: 14px;
+        color: rgba(240, 240, 240, 0.9);
+        border-color: rgba(240, 240, 240, 0.8);
+    }
+
+    section.contact div.socialMedia {
+        display: block;
+        margin-top: 50px;
+    }
+
+    section.contact div.socialMedia ul {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 150px;
+        list-style: none;
+    }
+
+    section.contact div.socialMedia * {
+        -webkit-transform: translate3d(0, 0, 0);
+    }
+
+    section.contact div.socialMedia ul li {
+        height: 60px;
+        margin: 0 60px;
+        text-align: center;
+    }
+
+    section.contact div.socialMedia ul li a {
+        display: block;
+        position: relative;
+        line-height: 60px;
+        width: 60px;
+        transform: rotate(-30deg) skewX(25deg);
+        color: #111;
+        font-size: 35px;
+        background-color: #efefef;
+        box-shadow: -23px 23px 23px rgba(0, 0, 0, 0.5);
+        transition: .5s;
+    }
+
+    section.contact div.socialMedia ul li a::before {
+        content: "";
+        position: absolute;
+        top: 10px;
+        left: -20px;
+        height: 60px;
+        width: 20px;
+        background-color: #b1b1b1;
+        transform: skewY(-45deg);
+        transition: .5s;
+    }
+
+    section.contact div.socialMedia ul li a::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: -10px;
+        height: 20px;
+        width: 60px;
+        background-color: #ccc;
+        transform: skewX(-45deg);
+        transition: .5s;
+    }
+
+    section.contact div.socialMedia ul li a:hover {
+        color: #f2f2f2;
+        box-shadow: -50px 50px 50px rgba(0, 0, 0, 0.5);
+        transform: rotate(-30deg) skewX(25deg) translate(20px, -20px);
+    }
+
+    section.contact div.socialMedia ul li:nth-of-type(1) a:hover {
+        background-color: #3B5998;
+    }
+
+    section.contact div.socialMedia ul li:nth-of-type(1) a:hover::before {
+        background-color: #223357;
+    }
+
+    section.contact div.socialMedia ul li:nth-of-type(1) a:hover::after {
+        background-color: #2A3F6B;
+    }
+
+    section.contact div.socialMedia ul li:nth-of-type(2) a:hover {
+        background-color: #00ACED;
+    }
+
+    section.contact div.socialMedia ul li:nth-of-type(2) a:hover::before {
+        background-color: #007CAB;
+    }
+
+    section.contact div.socialMedia ul li:nth-of-type(2) a:hover::after {
+        background-color: #0092C9;
+    }
+
+    section.contact div.socialMedia ul li:nth-of-type(3) a:hover {
+        background-color: #DC4E41;
+    }
+
+    section.contact div.socialMedia ul li:nth-of-type(3) a:hover::before {
+        background-color: #AD3D33;
+    }
+
+    section.contact div.socialMedia ul li:nth-of-type(3) a:hover::after {
+        background-color: #C7473B;
+    }
+
+    section.contact div.socialMedia ul li:nth-of-type(4) a:hover {
+        background-color: #0077B5;
+    }
+
+    section.contact div.socialMedia ul li:nth-of-type(4) a:hover::before {
+        background-color: #006194;
+    }
+
+    section.contact div.socialMedia ul li:nth-of-type(4) a:hover::after {
+        background-color: #006FA8;
+    }
+
+    section.contact div.socialMedia ul li:nth-of-type(5) a:hover {
+        background-color: #5A19BB;
+    }
+
+    section.contact div.socialMedia ul li:nth-of-type(5) a:hover::before {
+        background-color: #3D117F;
+    }
+
+    section.contact div.socialMedia ul li:nth-of-type(5) a:hover::after {
+        background-color: #481496;
+    }
+
+}
+
+@media (min-width: 1024px) and (min-height: 768px) {
+    header img {
+        left: -16px;
+        width: 415px;
+    }
+}
+
+@media (min-width: 1120px) {
+    header img {
+        bottom: -120px;
+        left: 40px;
+        width: 425px;
+    }
+
+    div.clock {
+        width: 72%;
+    }
+}
+
+@media (min-width: 1250px) {
+
+    header img {
+        bottom: -138px;
+        left: 98px;
+        width: 461px;
+    }
+
+    header p {
+        width: 65%;
+    }
+
+    div.clock {
+        width: 63%;
+    }
+
+    header button.learnMore {
+        width: 42%;
+    }
+
+    section.about p.aboutDesc {
+        margin-bottom: 90px;
+        font-size: 19px;
+    }
+
+    section.about p.secondPart {
+        font-size: 19px;
+    }
+
+    section.about p.secondPart.active {
+        top: 61px;
+    }
+
+    section.products div.product h3 {
+        font-size: 34px;
+    }
+
+    section.products div.product p.productDesc {
+        font-size: 17px;
+    }
+
+    section.products div.product.computer img {
+        width: 390px;
+    }
+
+    section.products div.headphones img.headphones {
+        width: 300px;
+    }
+
+    section.products div.phone img.phone {
+        width: 195px;
+    }
+
+    section.products div.product.more h3 {
+        font-size: 45px;
+    }
+
+    section.contact {
+        min-height: 115vh;
+    }
+
+    section.contact h2 {
+        font-size: 90px;
+    }
+
+    section.contact input {
+        height: 60px;
+    }
+
+    section.contact form button.send {
+        height: 60px;
+        font-size: 22px;
+    }
+
+    section.contact form input,
+    section.contact form textarea {
+        margin-bottom: 25px;
+    }
+
+    section.contact div.subscribe input {
+        height: 45px;
+        font-size: 15px;
+    }
+
+    section.contact div.subscribe button.subscribe {
+        height: 45px;
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 1366px) {
+
+    header img {
+        bottom: -154px;
+        left: 128px;
+        width: 472px;
+    }
+
+    div.clock {
+        width: 60%;
+    }
+
+    section h2 {
+        font-size: 86px;
+    }
+
+    section.about {
+        padding: 0 7%;
+    }
+
+    section.about p.aboutDesc {
+        font-size: 20px;
+    }
+
+    section.about p.secondPart {
+        font-size: 20px;
+    }
+
+    section.about p.secondPart.active {
+        top: 80px;
+        right: 7%;
+    }
+
+    section.about img.arrow {
+        width: 228px;
+    }
+
+    section.products div.product h3 {
+        font-size: 37px;
+    }
+
+    section.products div.product p.productDesc {
+        font-size: 18px;
+    }
+
+    section.products div.product.more h3 {
+        font-size: 48px;
+    }
+
+    section.contact form {
+        width: 550px;
+    }
+
+    section.contact div.subscribe {
+        width: 550px;
+    }
+
+    section.contact div.socialMedia ul li a {
+        line-height: 65px;
+        width: 65px;
+    }
+
+    section.contact div.socialMedia ul li a::before {
+        height: 65px;
+    }
+
+    section.contact div.socialMedia ul li a::after {
+        width: 65px;
+    }
+}
+
+@media (min-width: 1440px) {
+    header img {
+        bottom: -173px;
+        left: 136px;
+        width: 491px;
+    }
+
+    section h2 {
+        font-size: 90px;
+    }
+
+    section.about p.aboutDesc {
+        font-size: 21px;
+    }
+
+    section.about p.secondPart {
+        font-size: 21px;
+    }
+
+    section.about img.arrow {
+        bottom: 182px;
+        width: 245px;
+    }
+
+    section.products div.product.computer img {
+        width: 425px;
+    }
+
+    section.products div.headphones img.headphones {
+        width: 315px;
+    }
+
+    section.contact form {
+        width: 575px;
+    }
+
+    section.contact form input,
+    section.contact form textarea {
+        margin-bottom: 30px;
+        font-size: 18px;
+    }
+
+    section.contact input {
+        height: 70px;
+    }
+
+    section.contact textarea {
+        height: 205px;
+    }
+
+    section.contact form button.send {
+        height: 65px;
+        font-size: 24px;
+    }
+
+    section.contact div.subscribe {
+        width: 575px;
+    }
+
+    section.contact div.subscribe input {
+        height: 50px;
+        font-size: 17px;
+    }
+
+    section.contact div.subscribe button.subscribe {
+        height: 50px;
+        font-size: 17px;
+    }
+
+    section.contact div.socialMedia ul li {
+        margin: 0 70px;
+    }
+}
+
+@media (min-width: 1600px) {
+    header img {
+        bottom: -173px;
+        left: 140px;
+        width: 545px;
+    }
+
+    header h1 {
+        font-size: 95px;
+    }
+
+    section h2 {
+        font-size: 102px;
+    }
+
+    section.about p.aboutDesc {
+        font-size: 22px;
+    }
+
+    section.about p.secondPart {
+        font-size: 22px;
+    }
+
+    section.about img.arrow {
+        width: 250px;
+    }
+
+    section.products div.product p.productDesc {
+        width: 77%;
+    }
+
+    section.products div.product.more h3 {
+        font-size: 52px;
+    }
+
+    section.contact div.socialMedia ul li a {
+        line-height: 70px;
+        width: 70px;
+        font-size: 37px;
+    }
+
+    section.contact div.socialMedia ul li a::before {
+        height: 70px;
+    }
+
+    section.contact div.socialMedia ul li a::after {
+        width: 70px;
+    }
+
+}
+
+@media (min-width: 1920px) {
+
+    header h1 {
+        font-size: 105px;
+    }
+
+    section h2 {
+        font-size: 108px;
+    }
+
+    div.about {
+        width: 42%;
+    }
+
+    section.about p.aboutDesc {
+        margin-bottom: 120px;
+        font-size: 23px;
+    }
+
+    section.about p.secondPart {
+        width: 35%;
+        font-size: 23px;
+    }
+
+    section.about img.arrow {
+        width: 300px;
+    }
+
+    section.about img.arrow.active {
+        bottom: 250px;
+        right: 32%;
+    }
+
+    section.products div.product h3 {
+        font-size: 40px;
+    }
+
+    section.products div.product p.productDesc {
+        font-size: 20px;
+    }
+
+    section.products div.product p.productDesc {
+        width: 70%;
+    }
+
+    section.contact h2 {
+        font-size: 105px;
+    }
+
+    section.contact div.socialMedia {
+        margin-top: 80px;
+    }
+
+    section.contact div.socialMedia ul li a {
+        line-height: 80px;
+        width: 80px;
+        font-size: 40px;
+    }
+
+    section.contact div.socialMedia ul li a::before {
+        height: 80px;
+    }
+
+    section.contact div.socialMedia ul li a::after {
+        width: 80px;
+    }
+}
