@@ -187,6 +187,7 @@ button {
 
 header button.learnMore {
     height: 50px;
+    max-width: 500px;
     margin-top: var(--header-margin-top);
     font-size: 18px;
     background-image: linear-gradient(45deg, #5E11B2 42%, #E80CE3);
@@ -217,6 +218,7 @@ section.about {
     align-items: flex-start;
     flex-direction: column;
     height: 100vh;
+    max-height: 900px;
     margin-top: 25px;
     /* background-color: rgba(94, 17, 178, 0.9); */
     background-color: rgba(232, 12, 227, 0.7);
@@ -1857,5 +1859,12 @@ footer {
 
     section.contact div.socialMedia ul li a::after {
         width: 80px;
+    }
+}
+
+@media(min-height: 1024px) {
+    section.contact {
+        min-height: 0;
+        height: 1024px;
     }
 }
